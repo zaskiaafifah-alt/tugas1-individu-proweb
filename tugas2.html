@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Form Pendaftaran</title>
+<link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+  <h1>TUGAS INDIVIDU</h1>
+
+  <form action="#" method="post">
+
+    <fieldset>
+      <legend>Akun</legend>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password">
+
+      <label for="konfirmasi">Konfirmasi Password</label>
+      <input type="password" id="konfirmasi" name="konfirmasi">
+    </fieldset>
+
+    <fieldset>
+      <legend>Data</legend>
+
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" name="nama">
+
+      <label>Jenis Kelamin</label>
+      <div class="option-group">
+        <label class="option-item"><input type="radio" name="kelamin" value="pria"> Pria</label>
+        <label class="option-item"><input type="radio" name="kelamin" value="perempuan"> Perempuan</label>
+      </div>
+
+      <label>Informasi Yang Disukai</label>
+      <div class="option-group">
+        <label class="option-item"><input type="checkbox" name="info" value="olahraga"> Olahraga</label>
+        <label class="option-item"><input type="checkbox" name="info" value="travelling"> Travelling</label>
+        <label class="option-item"><input type="checkbox" name="info" value="kesehatan"> Kesehatan</label>
+      </div>
+
+      <label for="kota">Kota</label>
+      <select id="kota" name="kota">
+        <option value="">-- Pilih Kota --</option>
+        <option value="medan">Medan</option>
+        <option value="aceh">Aceh</option>
+        <option value="sibolga">Sibolga</option>
+        <option value="bandung">Bandung</option>
+        <option value="surabaya">Surabaya</option>
+        <option value="jakarta">Jakarta</option>
+      </select>
+
+      <label for="alamat">Alamat</label>
+      <textarea id="alamat" name="alamat" rows="4" placeholder="Tuliskan alamat lengkap Anda"></textarea>
+    </fieldset>
+
+    <div class="button-group">
+      <button type="submit">Daftar</button>
+      <button type="reset">reset</button>
+    </div>
+
+  </form>
+
+</body>
+</html>
