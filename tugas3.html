@@ -1,0 +1,105 @@
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulator Aritmatika Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .kotak {
+      max-width: 460px;
+      border: 1px solid #999;
+      padding: 16px;
+    }
+    .baris {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .baris label {
+      width: 130px;
+      font-size: 18px;
+    }
+    .baris input {
+      flex: 1;
+      padding: 8px;
+      font-size: 16px;
+    }
+    .tombol {
+      display: flex;
+      gap: 8px;
+      margin: 0 0 12px 142px;
+    }
+    .tombol button {
+      width: 40px;
+      height: 36px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #output {
+      background: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="kotak">
+    <div class="baris">
+      <label for="bilangan1">Input Bilangan 1</label>
+      <input type="number" id="bilangan1" placeholder="0">
+    </div>
+    <div class="baris">
+      <label for="bilangan2">Input Bilangan 2</label>
+      <input type="number" id="bilangan2" placeholder="0">
+    </div>
+
+    <div class="tombol">
+      <button onclick="hitung('+')">+</button>
+      <button onclick="hitung('-')">-</button>
+      <button onclick="hitung('*')">x</button>
+      <button onclick="hitung('/')">/</button>
+    </div>
+
+    <div class="baris">
+      <label for="output">Output</label>
+      <input type="text" id="output" readonly>
+    </div>
+  </div>
+
+  <script>
+    function hitung(operator) {
+      var teks1 = document.getElementById("bilangan1").value;
+      var teks2 = document.getElementById("bilangan2").value;
+      var output = document.getElementById("output");
+
+      if (teks1 === "" || teks2 === "") {
+        output.value = "Isi kedua bilangan dulu";
+        return;
+      }
+
+      var a = parseFloat(teks1);
+      var b = parseFloat(teks2);
+      var hasil;
+
+      if (operator === "+") {
+        hasil = a + b;
+      } else if (operator === "-") {
+        hasil = a - b;
+      } else if (operator === "*") {
+        hasil = a * b;
+      } else if (operator === "/") {
+        if (b === 0) {
+          output.value = "Tidak bisa dibagi 0";
+          return;
+        }
+        hasil = a / b;
+      }
+
+      output.value = hasil;
+    }
+  </script>
+</body>
+</html>
